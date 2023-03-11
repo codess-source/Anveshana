@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" >
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  </head>
+    <title>Anveshana</title>
+</head>
+<body>
+    
+    <header>
+
+        <a href="#" class="logo"><img src="logo.png" alt=""></a>
+    </div>
+
+        
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h5>#blendedLearning</h5>
+            <h4>Welcome to</h4>
+            <h1>Anveshana</h1>
+            <p>We would like to take this opportunity to invite you to enrol your child with us.</p>
+            <a href="#" class="btn" onclick="openPop()">Book Your Seat</a>
+            <a href="#" class="ctaa" onclick="openPopup()"><i class="ri-file-text-fill"></i>Brochure</a></div>
+            <div class="hero-img" id="hero-img">
+                <img src="images/bg.png" >
+           </div>
+            <div class="popup" id="popup">
+                <img src="images/flyer.jpg" alt="">
+                <button type="button" onclick="closePopup()">Close Popup</button>
+            </div>
+        
+        
+
+        <div class="pop" id="pop">
+            <h2>Announcement</h2> <br>
+            <p>Finally!! The wait is over..... <br>
+            Anveshana is Live!!</p>
+            <b class="closew" onclick="closePop()">x</b> <br>
+            <a href="https://forms.gle/QbDQe48mDsYgieJ59" target="_blank">Fill the Form</a>
+        </div>
+    </section>
+    <div class="scroll-down">
+        <a href="# "><i class="ri-arrow-down-s-fill"></i></a>
+    </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <canvas id="my-canvas"></canvas>
+    <script src="index.min.js"></script>
+    <script>
+        let popup = document.getElementById("popup");
+        let pop = document.getElementById("pop");
+        let confe = document.getElementById("my-canvas");
+        let menu = document.getElementById("menu-icon");
+        let navlist = document.getElementById("navlist");
+
+       
+
+        function dropDown(){
+            menu.classList.toggle("bx-x");
+            navlist.classList.toggle("open");
+        }
+
+        const sr = ScrollReveal ({
+            distance: '65px',
+            duration: 2600,
+            delay: 450,
+            reset: true
+        });
+
+        sr.reveal('.hero-text',{delay:200, origin:'top'});
+        sr.reveal('.hero-img',{delay:450, origin:'top'});
+        sr.reveal('.scroll-down',{delay:500, origin:'right'});
+        
+
+
+        function openPop(){
+            pop.classList.add("active");
+            confe.classList.add("active");
+        }
+
+        function closePop(){
+            pop.classList.remove("active");
+            confe.classList.remove("active");
+            
+        }
+         function openPopup(){
+            popup.classList.add("open-popup");
+    }
+            function closePopup(){
+             popup.classList.remove("open-popup");
+            
+        }
+        var confettiSettings = { target: 'my-canvas' };
+        var confetti = new ConfettiGenerator(confettiSettings);
+        confetti.render();
+    </script>
+</body>
+</html>
